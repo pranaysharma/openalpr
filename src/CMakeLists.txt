@@ -16,6 +16,9 @@ add_definitions( -DOPENALPR_PATCH_VERSION=${OPENALPR_PATCH_VERSION})
 SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules/")
 
 
+SET(OpenCV_DIR "/usr/local/lib")
+#SET(Tesseract_DIR "/usr/local/include/tesseract")
+SET(Tesseract_DIR "~/workspace/public/openalpr/src")
 FIND_PACKAGE( Tesseract REQUIRED )
 
 include_directories(${Tesseract_INCLUDE_DIRS})
@@ -51,7 +54,9 @@ ELSE()
 ENDIF()
 
 
-set(CMAKE_CSS_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall ")
+#set(CMAKE_CSS_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall ")
+set(CMAKE_CSS_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 ")
+
 ADD_EXECUTABLE( alpr  main.cpp )
 
 TARGET_LINK_LIBRARIES(alpr
