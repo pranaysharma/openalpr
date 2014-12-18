@@ -37,5 +37,39 @@ openalpr-*.tar.gz
 Debug/
 Release/
 
+#Eclipse files
+# Eclipse
+.classpath
+.project
+.settings/
+.cproject
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
 
 cmake_install.cmake
+*.cmake
+*.so
+*.so.1
+*.a
+CPackConfig.cmake
+*.cmake
+
+#pydev
+*.pydevproject
+
+#OpenALPR related
+alpr
+alprd
+alprd_results/
+#.*
+core
